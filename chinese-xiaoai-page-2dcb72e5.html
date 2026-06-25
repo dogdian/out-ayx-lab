@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>小艾电竞 · 产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fde9d8 0%, #f8d5be 50%, #f3c3a3 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 2rem 1.2rem 3rem;
+            color: #2e2421;
+        }
+        .page-wrapper {
+            max-width: 960px;
+            width: 100%;
+        }
+
+        /* 白色内容卡片 */
+        .card {
+            background: #fffcf9;
+            border-radius: 36px;
+            box-shadow: 0 12px 32px rgba(140, 80, 40, 0.12), 0 4px 12px rgba(0,0,0,0.04);
+            padding: 2.6rem 2.8rem;
+            margin-bottom: 2.5rem;
+            transition: box-shadow 0.25s ease;
+        }
+        .card:hover {
+            box-shadow: 0 20px 40px rgba(140, 80, 40, 0.16);
+        }
+        @media (max-width: 600px) {
+            .card {
+                padding: 2rem 1.5rem;
+                border-radius: 28px;
+            }
+            body {
+                padding: 1.2rem 0.8rem 2.5rem;
+            }
+        }
+
+        /* 标题 & 正文 */
+        h1 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: #3f2a1c;
+            margin-bottom: 0.6rem;
+        }
+        .sub-head {
+            font-size: 1.1rem;
+            color: #7b5f4b;
+            font-weight: 400;
+            margin-bottom: 1.8rem;
+            border-left: 4px solid #e4b594;
+            padding-left: 1.2rem;
+        }
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #4f3422;
+            margin-top: 0.2rem;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.01em;
+        }
+        p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #3e2c20;
+            margin-bottom: 1.2rem;
+        }
+        .small-note {
+            font-size: 0.95rem;
+            color: #7b6658;
+        }
+
+        /* 亮点网格 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem 2rem;
+            margin: 1.5rem 0 0.8rem;
+        }
+        .feature-item {
+            background: #faf3ed;
+            border-radius: 20px;
+            padding: 1.3rem 1.5rem 1.5rem;
+            border: 1px solid rgba(230, 190, 160, 0.3);
+        }
+        .feature-item h3 {
+            font-size: 1.2rem;
+            font-weight: 550;
+            color: #4d3221;
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .feature-item p {
+            font-size: 0.98rem;
+            margin-bottom: 0;
+            color: #4f3a2b;
+        }
+        @media (max-width: 620px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        /* 场景块 */
+        .scenario-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.6rem;
+            margin: 1.2rem 0 0.4rem;
+        }
+        .scenario-box {
+            flex: 1 1 180px;
+            background: #f5efe9;
+            border-radius: 20px;
+            padding: 1.2rem 1.4rem;
+            border: 1px solid #e8d7cb;
+            transition: background 0.2s;
+        }
+        .scenario-box:hover {
+            background: #f0e5dc;
+        }
+        .scenario-box h4 {
+            font-size: 1.05rem;
+            font-weight: 550;
+            color: #4f3928;
+            margin-bottom: 0.3rem;
+        }
+        .scenario-box p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            color: #5a4435;
+        }
+
+        /* FAQ 摘要 */
+        .faq-mini {
+            margin-top: 0.8rem;
+        }
+        .faq-q {
+            font-weight: 550;
+            color: #4a3222;
+            margin-top: 1rem;
+            margin-bottom: 0.2rem;
+        }
+        .faq-a {
+            color: #4d3a2d;
+            padding-left: 0.8rem;
+            border-left: 2px solid #e6cbb9;
+            margin-top: 0.1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        /* 链接按钮感 */
+        a {
+            color: #a5643c;
+            text-decoration: none;
+            font-weight: 500;
+            background: transparent;
+            padding: 0.1em 0.3em;
+            border-radius: 30px;
+            transition: background 0.2s, color 0.2s, box-shadow 0.15s;
+            display: inline-block;
+            line-height: 1.4;
+        }
+        a:hover {
+            background: #f0d9c8;
+            color: #7a442a;
+            box-shadow: 0 2px 6px rgba(160, 100, 60, 0.15);
+        }
+
+        .footer-note {
+            margin-top: 1.8rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid #e4d3c6;
+            font-size: 0.92rem;
+            color: #7a6557;
+            text-align: center;
+        }
+
+        .badge-light {
+            display: inline-block;
+            background: #e7d4c4;
+            padding: 0.15rem 0.9rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 450;
+            color: #4d3627;
+            letter-spacing: 0.3px;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #e6d5c6;
+            margin: 1.8rem 0 1.5rem;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <div class="card">
+        <h1>小艾电竞 · 产品说明</h1>
+        <div class="sub-head">帮你在几秒内判断这个网站是否对你有用</div>
+
+        <p><strong>小艾电竞</strong> 是一个围绕游戏与电竞场景提供信息、工具与社区氛围的站点。如果你经常关注赛事、想快速了解某款游戏的实用技巧，或者单纯想找一个能安静翻阅电竞内容的地方，这里或许值得你停留几分钟。</p>
+        <p>整个平台没有浮夸的标语或诱导注册的弹窗，内容以实用性优先。无论你是休闲玩家还是硬核观众，都可以直接通过 <a href="https://chinese-xiaoai.com">小艾电竞</a> 访问当前页面，而不用绕路。</p>
+    </div>
+
+    <div class="card">
+        <h2>核心亮点</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h3>🎯 信息聚合</h3>
+                <p>将热门游戏的版本动态、英雄/角色数据、赛事简报集中呈现，减少你在多个平台之间切换的精力。</p>
+            </div>
+            <div class="feature-item">
+                <h3>📘 易懂解读</h3>
+                <p>尽量避免生僻术语和混乱排版，每个功能点或攻略都配有简短的上下文说明，降低理解门槛。</p>
+            </div>
+            <div class="feature-item">
+                <h3>🧩 工具辅助</h3>
+                <p>提供计算器、阵容模拟、掉落查询等轻量工具，不收集隐私数据，打开即用，用完即走。</p>
+            </div>
+            <div class="feature-item">
+                <h3>🔄 社区氛围</h3>
+                <p>用户可参与讨论与投稿，但站方保持克制的审核与推荐，不鼓励对立、引战或虚假信息。</p>
+            </div>
+        </div>
+        <p class="small-note" style="margin-top:1.2rem;">以上特点均基于当前公开内容整理，具体功能以 <a href="https://chinese-xiaoai.com">小艾电竞</a> 内实际展示为准。</p>
+    </div>
+
+    <div class="card">
+        <h2>适合哪些场景</h2>
+        <div class="scenario-row">
+            <div class="scenario-box">
+                <h4>🕹️ 赛前快速查阅</h4>
+                <p>比赛开始前想确认版本改动或选手数据，不用翻几十页更新日志。</p>
+            </div>
+            <div class="scenario-box">
+                <h4>📚 学习基础思路</h4>
+                <p>刚接触某款游戏，希望看到一份不啰嗦的入门要点或装备推荐。</p>
+            </div>
+            <div class="scenario-box">
+                <h4>🧘 安静浏览</h4>
+                <p>只想看看赛事新闻或有趣对局复盘，不被铺天盖地的广告打扰。</p>
+            </div>
+            <div class="scenario-box">
+                <h4>🤝 分享与讨论</h4>
+                <p>发现一篇不错的分析，想直接发给朋友，或者看看其他人的评论。</p>
+            </div>
+        </div>
+        <p style="margin-top:1.4rem;">当然，以上只是常见用法。如果你有其他需求，也可以在 <a href="https://chinese-xiaoai.com">小艾电竞</a> 里探索对应的板块，大部分内容都无需登录即可阅读。</p>
+    </div>
+
+    <div class="card">
+        <h2>常见疑问摘要</h2>
+        <div class="faq-mini">
+            <div class="faq-q">▸ 网站收费吗？需要注册吗？</div>
+            <div class="faq-a">目前绝大部分内容与工具都可免费使用，不强制注册。少数互动功能（如评论、收藏）可能需要简单账号，但不会索取手机或身份证等敏感信息。</div>
+
+            <div class="faq-q">▸ 内容更新频率如何？</div>
+            <div class="faq-a">主要跟随游戏版本与赛事节奏更新。大型版本期间通常会在 24 小时内整理出关键变动，日常攻略与资讯保持每周数次更新。</div>
+
+            <div class="faq-q">▸ 信息可靠吗？有官方来源吗？</div>
+            <div class="faq-a">站方尽可能标注信息来源，如官方补丁说明、赛事官网、可信社区分析。但电竞信息变化快，建议你将本网站作为参考之一，最终以游戏内实际情况为准。</div>
+
+            <div class="faq-q">▸ 移动端体验如何？</div>
+            <div class="faq-a">页面采用响应式设计，手机与平板均可正常浏览，部分工具也适配了触控操作。如果遇到显示问题，可以尝试横屏或反馈给站方。</div>
+        </div>
+        <hr>
+        <p class="small-note" style="margin-bottom:0;">如果你还有其他问题，不妨直接打开 <a href="https://chinese-xiaoai.com">小艾电竞</a> 看看，页面底部通常能找到联系方式或帮助索引。</p>
+    </div>
+
+    <div class="card" style="padding: 1.8rem 2.4rem;">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.8rem;">
+            <span class="badge-light">温和 · 实用 · 不打扰</span>
+            <span style="color:#7a6557; font-size:0.95rem;">希望这个页面帮你节省判断的时间</span>
+        </div>
+        <div class="footer-note">
+            <span>© 小艾电竞 · 产品说明页 · 内容仅供参考</span>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
